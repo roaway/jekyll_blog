@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ""
+title: "jekyll添加第三方评论系统"
 comments: true
 description: ""
 category: "jekyll"
@@ -14,5 +14,7 @@ tags: [jekyll]
 > comments: true
 > # other options
 > ...
+
+-------------------------------------------------------------------------------
 
 2. In between a % if page.comments % and a % endif % tag, add the Universal Embed Code in the appropriate template where you'd like Disqus to load.

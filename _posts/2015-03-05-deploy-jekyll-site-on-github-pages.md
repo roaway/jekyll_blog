@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "将jekyll生成的网站部署到github gages上"
+title: "将jekyll生成的网站部署到github pages上"
 description: "jekyll"
 category: "markdown"
 tags: [jekyll, blog, github, gh-pages]
