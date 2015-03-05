@@ -42,15 +42,15 @@ tags: [jekyll, blog, github, gh-pages]
 为了简化操作，还可以写一个makefile文件，实现本地化管理后，自动化同步到网站上。
 
     deploy:
+         jekyll b
          git add .
          git commit -a -m "update"
          git push -u origin master
-         jekyll b
-         cd _site
-         git add .
-         git commit -a -m "update"
-         git push -u origin gh-pages
-         cd ..
+
+         cd _site;\
+         git add .;\
+         git commit -a -m "update";\
+         git push -u origin gh-pages;
          git checkout master
 
 这样就可以在本地管理日志，然后执行make，同步到网站上。
