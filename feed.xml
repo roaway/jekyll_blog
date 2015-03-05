@@ -6,8 +6,8 @@
 </description>
     <link>/jekyll_blog/jekyll_blog/</link>
     <atom:link href="/jekyll_blog/jekyll_blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 05 Mar 2015 22:21:57 +0800</pubDate>
-    <lastBuildDate>Thu, 05 Mar 2015 22:21:57 +0800</lastBuildDate>
+    <pubDate>Fri, 06 Mar 2015 00:02:17 +0800</pubDate>
+    <lastBuildDate>Fri, 06 Mar 2015 00:02:17 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -51,15 +51,15 @@ git push -u origin gh-pages
 &lt;p&gt;为了简化操作，还可以写一个makefile文件，实现本地化管理后，自动化同步到网站上。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;deploy:
+     jekyll b
      git add .
      git commit -a -m &quot;update&quot;
      git push -u origin master
-     jekyll b
-     cd _site
-     git add .
-     git commit -a -m &quot;update&quot;
-     git push -u origin gh-pages
-     cd ..
+
+     cd _site;\
+     git add .;\
+     git commit -a -m &quot;update&quot;;\
+     git push -u origin gh-pages;
      git checkout master
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -79,6 +79,35 @@ git push -u origin gh-pages
         
         
         <category>markdown</category>
+        
+      </item>
+    
+      <item>
+        <title></title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;Add a variable called comments to the YAML Front Matter and set its value to true. A sample front matter might look like:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;…
+layout: default
+comments: true
+# other options
+…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In between a % if page.comments % and a % endif % tag, add the Universal Embed Code in the appropriate template where you’d like Disqus to load.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 05 Mar 2015 00:00:00 +0800</pubDate>
+        <link>/jekyll_blog/jekyll_blog/jekyll/2015/03/05/add-disqus-to-jekyll.html</link>
+        <guid isPermaLink="true">/jekyll_blog/jekyll_blog/jekyll/2015/03/05/add-disqus-to-jekyll.html</guid>
+        
+        <category>jekyll</category>
+        
+        
+        <category>jekyll</category>
         
       </item>
     
