@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>将jekyll生成的网站部署到github gages上</title>
-  <meta name="description" content="">
+  <meta name="description" content="在jekyll博客项目目录执行">
 
   <link rel="stylesheet" href="/jekyll_blog/css/main.css">
   <link rel="canonical" href="/jekyll_blog/jekyll_blog/markdown/2015/03/05/deploy-jekyll-site-on-github-pages.html">
@@ -62,7 +62,58 @@
   </header>
 
   <article class="post-content">
-    
+    <p>在jekyll博客项目目录执行</p>
+
+<pre><code>git init
+git add .
+git commit -a -m "my blog"
+git remote add origin https://www.github.com/roaway/jekyll_blog.git
+git push -u origin master
+</code></pre>
+
+<p>以上命令，将博客项目列入Git管理，并push到github网站托管。push之前，需在github网站新建一个项目仓库，本例仓库名为jekyll_blog.</p>
+
+<p>编辑项目目录中的_config.yml文件, 将baseurl属性值设置为“/jekyll_blog“。</p>
+
+<p>使用markdown语言编辑好日志文件后，保存在_post目录，生产静态网页文件，同时将源文件上传到github仓库master分支。</p>
+
+<pre><code>git add .
+git commit -a -m "update"
+jekyll b
+git push -u origin master
+</code></pre>
+
+<p>输出结果保存在_site目录。</p>
+
+<p>切换_site目录，将_site目录下的网站文件上传到github网站jekyll_blog仓库中下gh-pages支分中，命令如下:</p>
+
+<pre><code>cd _site
+git init
+git br gh-pages
+git add .
+git commit -a -m "static content"
+git remote add origin https://www.github.com/roaway/jekyll_blog.git
+git push -u origin gh-pages
+</code></pre>
+
+<p>这样，就可以通过<a href="https://roaway.github.com/jekyll_blog">https://roaway.github.com/jekyll_blog</a>访问网站了。</p>
+
+<p>为了简化操作，还可以写一个makefile文件，实现本地化管理后，自动化同步到网站上。</p>
+
+<pre><code>deploy:
+     git add .
+     git commit -a -m "update"
+     git push -u origin master
+     jekyll b
+     cd _site
+     git add .
+     git commit -a -m "update"
+     git push -u origin gh-pages
+     cd ..
+     git checkout master
+</code></pre>
+
+<p>这样就可以在本地管理日志，然后执行make，同步到网站上。</p>
 
   </article>
 

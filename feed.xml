@@ -6,14 +6,64 @@
 </description>
     <link>/jekyll_blog/jekyll_blog/</link>
     <atom:link href="/jekyll_blog/jekyll_blog/feed.xml" rel="self" type="application/rss+xml"/>
-<<<<<<< HEAD
-    <pubDate>Thu, 05 Mar 2015 13:10:34 +0800</pubDate>
-    <lastBuildDate>Thu, 05 Mar 2015 13:10:34 +0800</lastBuildDate>
+    <pubDate>Thu, 05 Mar 2015 22:21:57 +0800</pubDate>
+    <lastBuildDate>Thu, 05 Mar 2015 22:21:57 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>将jekyll生成的网站部署到github gages上</title>
-        <description>
+        <description>&lt;p&gt;在jekyll博客项目目录执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git init
+git add .
+git commit -a -m &quot;my blog&quot;
+git remote add origin https://www.github.com/roaway/jekyll_blog.git
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上命令，将博客项目列入Git管理，并push到github网站托管。push之前，需在github网站新建一个项目仓库，本例仓库名为jekyll_blog.&lt;/p&gt;
+
+&lt;p&gt;编辑项目目录中的_config.yml文件, 将baseurl属性值设置为“/jekyll_blog“。&lt;/p&gt;
+
+&lt;p&gt;使用markdown语言编辑好日志文件后，保存在_post目录，生产静态网页文件，同时将源文件上传到github仓库master分支。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add .
+git commit -a -m &quot;update&quot;
+jekyll b
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出结果保存在_site目录。&lt;/p&gt;
+
+&lt;p&gt;切换_site目录，将_site目录下的网站文件上传到github网站jekyll_blog仓库中下gh-pages支分中，命令如下:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd _site
+git init
+git br gh-pages
+git add .
+git commit -a -m &quot;static content&quot;
+git remote add origin https://www.github.com/roaway/jekyll_blog.git
+git push -u origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样，就可以通过&lt;a href=&quot;https://roaway.github.com/jekyll_blog&quot;&gt;https://roaway.github.com/jekyll_blog&lt;/a&gt;访问网站了。&lt;/p&gt;
+
+&lt;p&gt;为了简化操作，还可以写一个makefile文件，实现本地化管理后，自动化同步到网站上。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deploy:
+     git add .
+     git commit -a -m &quot;update&quot;
+     git push -u origin master
+     jekyll b
+     cd _site
+     git add .
+     git commit -a -m &quot;update&quot;
+     git push -u origin gh-pages
+     cd ..
+     git checkout master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样就可以在本地管理日志，然后执行make，同步到网站上。&lt;/p&gt;
 </description>
         <pubDate>Thu, 05 Mar 2015 00:00:00 +0800</pubDate>
         <link>/jekyll_blog/jekyll_blog/markdown/2015/03/05/deploy-jekyll-site-on-github-pages.html</link>
@@ -33,13 +83,6 @@
       </item>
     
       <item>
-=======
-    <pubDate>Thu, 05 Mar 2015 00:44:02 +0800</pubDate>
-    <lastBuildDate>Thu, 05 Mar 2015 00:44:02 +0800</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
-    
-      <item>
->>>>>>> c9cfef1003a8a7f3d74c1c30fa4e24ac7a20c1e7
         <title>Tmux配置</title>
         <description>&lt;p&gt;Tmux是Linux终端多路复用器，类似于GNU Screen，功能远比后者强大，现在已成为我在Chromebook linux环境下每天必用的工具。&lt;/p&gt;
 
