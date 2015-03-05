@@ -1,8 +1,8 @@
 deploy:
+	jekyll b
 	git add .
 	git commit -a -m "update"
 	git push -u origin master
-	jekyll b
 	cd _site
 	git add .
 	git commit -a -m "update"
