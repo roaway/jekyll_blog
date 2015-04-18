@@ -132,14 +132,14 @@ tags: []
     M P = !/mnt/us/mplayer/control.sh prev
     M N = !/mnt/us/mplayer/control.sh next
 
-myts.l.ini
+# myts.l.ini
     [Actions]
     T A = !/mnt/us/myts/myts.sh kill
     T T = !/mnt/us/myts/myts.sh 1
     T Y = !/mnt/us/myts/myts.sh 2
     T U = !/mnt/us/myts/myts.sh 3
 
-rce.ini
+# rce.ini
     [RemoteCommandEntry]
 
     ;; comment out AutoEnable and enableRCE definitions below
