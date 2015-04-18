@@ -2,7 +2,7 @@
 layout: post
 title: "Kindle 3 lauchpad 配置文件"
 description: ""
-category: "markdown"
+category: "Kindle"
 tags: []
 ---
 
