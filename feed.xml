@@ -6,36 +6,38 @@
 </description>
     <link>https://roaway.github.io/jekyll_blog/</link>
     <atom:link href="https://roaway.github.io/jekyll_blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 18 Apr 2015 14:23:11 +0800</pubDate>
-    <lastBuildDate>Sat, 18 Apr 2015 14:23:11 +0800</lastBuildDate>
+    <pubDate>Sat, 18 Apr 2015 16:30:06 +0800</pubDate>
+    <lastBuildDate>Sat, 18 Apr 2015 16:30:06 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Kindle 3 lauchpad 配置文件</title>
         <description>&lt;p&gt;自从有了平板，Chromebook, 我的Kindle 3的使用机会是越来越少了。之前在Kindle 3上捣鼓的一些配置，尤其是一些特别实用的快捷键都忘记了。下面就贴出lauchpad的快捷键配置。&lt;/p&gt;
 
-&lt;p&gt;** fbreader.ini
-[Actions]
+&lt;h1 id=&quot;fbreaderini&quot;&gt;fbreader.ini&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;[Actions]
 ;; run FBReader
 F B = !/mnt/us/FBReader/goqt.sh FBReader &amp;amp;
 ;; run fbKindle
-F R = !/mnt/us/fbKindle/goqt.sh FBReader &amp;amp;&lt;/p&gt;
+F R = !/mnt/us/fbKindle/goqt.sh FBReader &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&quot;kpdfini&quot;&gt;kpdf.ini&lt;/h1&gt;
-&lt;p&gt;[Actions]
+&lt;pre&gt;&lt;code&gt;[Actions]
 # start kindlepdfviewer with filebrowser in /mnt/us/documents
 P D = !/mnt/us/kindlepdfviewer/kpdf.sh /mnt/us/documents
 # start kindlepdfviewer with last document
 P P = !/mnt/us/kindlepdfviewer/kpdf.sh
 # start kindlepdfviewer without framework in /mnt/us/documents
-P K = !/mnt/us/kindlepdfviewer/kpdf.sh –framework_stop /mnt/us/documents
+P K = !/mnt/us/kindlepdfviewer/kpdf.sh --framework_stop /mnt/us/documents
 # start kindlepdfviewer without framework on last read document
-P L = !/mnt/us/kindlepdfviewer/kpdf.sh –framework_stop
+P L = !/mnt/us/kindlepdfviewer/kpdf.sh --framework_stop
 # restart amazon framework - when it got irritated
-P R = !/etc/init.d/framework restart&lt;/p&gt;
+P R = !/etc/init.d/framework restart
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&quot;launchpadini&quot;&gt;launchpad.ini&lt;/h1&gt;
-&lt;p&gt;;;;
+&lt;pre&gt;&lt;code&gt;;;;
 ;;; when started, the kindle launchpad just transparently scans keypad and
 ;;; fiveway keystrokes until the user presses and releases the hot sequence
 ;;; Introducer key. Then the launchpad enters the hotkey mode: it captures
@@ -45,9 +47,9 @@ P R = !/etc/init.d/framework restart&lt;/p&gt;
 ;;; When the hotkey interval timer triggers or the Trailer key is pressed, the system
 ;;; input capture gets released, and an attempt to execute collected hotkey action
 ;;; is made. Available hotkey actions are controlled by contents of the [Action]
-;;; section below&lt;/p&gt;
+;;; section below
 
-&lt;p&gt;; Kindle input key symbolic names are used to specify the hotkey sequence introducer
+; Kindle input key symbolic names are used to specify the hotkey sequence introducer
 ; and trailer keys. See keydefs.ini for details
 [Settings]
 Introducer = Shift
@@ -56,18 +58,18 @@ HotInterval = 700
 ScriptDirectory = ./scripts
 KeyboardInput = /dev/input/event0
 FivewayInput = /dev/input/event1
-InterKeyDelay = 300&lt;/p&gt;
+InterKeyDelay = 300
 
-&lt;p&gt;;;; hotkey actions are defined below as &lt;key_sequence&gt; = &lt;action_command&gt;
+;;; hotkey actions are defined below as &amp;lt;key_sequence&amp;gt; = &amp;lt;action_command&amp;gt;
 ;;; one action definition per text line.
 ;;;
-;;; &lt;key_sequence&gt; is a blank separated list of key symbolic names. See keydefs.ini for details.
-;;; &lt;action_command&gt; describes the action to execute on a particular hotkey sequence.
+;;; &amp;lt;key_sequence&amp;gt; is a blank separated list of key symbolic names. See keydefs.ini for details.
+;;; &amp;lt;action_command&amp;gt; describes the action to execute on a particular hotkey sequence.
 ;;; Currently three type of action supported depending on the first character of the
 ;;; command string:
-;;;  &#39;!&#39; -- shell command. The &lt;action_command&gt; string excluding the leading &#39;!&#39; is sent to the
+;;;  &#39;!&#39; -- shell command. The &amp;lt;action_command&amp;gt; string excluding the leading &#39;!&#39; is sent to the
 ;;;         system shell, exactly as it was typed from the console.
-;;;  &#39;@&#39; -- Kindle Framework script. The &lt;action_command&gt; string excluding the leading &#39;@&#39; is interpreted
+;;;  &#39;@&#39; -- Kindle Framework script. The &amp;lt;action_command&amp;gt; string excluding the leading &#39;@&#39; is interpreted
 ;;;         as a name of a special script containing command information obeying format of
 ;;;         the known hotkeys package. The main purpose of these scripts is to simplify
 ;;;         entering special symbols into kindle Framework search box
@@ -81,16 +83,16 @@ InterKeyDelay = 300&lt;/p&gt;
 ;;;   Note: to correctly accept  kindle key sequence starting with a special
 ;;;         symbol, the Framework search box should be brought up, if not already.
 ;;;         Press the &#39;Del&#39; key on Kindle in order to bring the search box up
-;;;&lt;/action_command&gt;&lt;/action_command&gt;&lt;/action_command&gt;&lt;/key_sequence&gt;&lt;/action_command&gt;&lt;/key_sequence&gt;&lt;/p&gt;
+;;;
 
-&lt;p&gt;[Actions]
+[Actions]
 ;
 ; hotkey sequence definitions below are provided for reference only.
 ; uncomment corresponding line(s) and restart the Program in order to enable
 ; these definitions
-;&lt;/p&gt;
+;
 
-&lt;p&gt;;Dot = @SHIFT-DOT.sh
+;Dot = @SHIFT-DOT.sh
 ;Slash = @SHIFT-SLASH.sh
 ;;0 = @SHIFT-0.sh
 ;;1 = @SHIFT-1.sh
@@ -103,70 +105,74 @@ InterKeyDelay = 300&lt;/p&gt;
 ;;8 = @SHIFT-8.sh
 ;;9 = @SHIFT-9.sh
 ;
-;;P = #’)’
-;;O = #’(‘
-;;I = #’*’
-;;U = #’&amp;amp;’
-;;Y = #’^’
-;;T = #’%’
-;;R = #’$’
-;;E = #’#’
-;;W = #’@’
-;;Q = #’!’
-;;Dot = #’,’
-;;Slash = #’?’
+;;P = #&#39;)&#39;
+;;O = #&#39;(&#39;
+;;I = #&#39;*&#39;
+;;U = #&#39;&amp;amp;&#39;
+;;Y = #&#39;^&#39;
+;;T = #&#39;%&#39;
+;;R = #&#39;$&#39;
+;;E = #&#39;#&#39;
+;;W = #&#39;@&#39;
+;;Q = #&#39;!&#39;
+;;Dot = #&#39;,&#39;
+;;Slash = #&#39;?&#39;
 ;
-;;D = #’;’ “debugOn”
-;;N = #”`usbNetwork”
-;;X = “just a string”&lt;/p&gt;
+;;D = #&#39;;&#39; &quot;debugOn&quot;
+;;N = #&quot;`usbNetwork&quot;
+;;X = &quot;just a string&quot;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&quot;mplayerini&quot;&gt;mplayer.ini&lt;/h1&gt;
-&lt;p&gt;[Actions]&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Actions]
 
-&lt;h2 id=&quot;launch-the-playlist-see-mplayerplaylist&quot;&gt;Launch the playlist, see mplayer/playlist&lt;/h2&gt;
-&lt;p&gt;M L = !/mnt/us/mplayer/control.sh playlist&lt;/p&gt;
+## Launch the playlist, see mplayer/playlist
+M L = !/mnt/us/mplayer/control.sh playlist
 
-&lt;h2 id=&quot;play-everything-in-the-music-directory&quot;&gt;Play everything in the music directory&lt;/h2&gt;
-&lt;p&gt;M A = !/mnt/us/mplayer/control.sh playall&lt;/p&gt;
+## Play everything in the music directory
+M A = !/mnt/us/mplayer/control.sh playall
 
-&lt;h2 id=&quot;play-everything-in-the-music-directory-in-random-order-shuffle&quot;&gt;Play everything in the music directory, in random order (Shuffle)&lt;/h2&gt;
-&lt;p&gt;M R = !/mnt/us/mplayer/control.sh playrand&lt;/p&gt;
+## Play everything in the music directory, in random order (Shuffle)
+M R = !/mnt/us/mplayer/control.sh playrand
 
-&lt;p&gt;M Space = !/mnt/us/mplayer/control.sh pause
+M Space = !/mnt/us/mplayer/control.sh pause
 M S = !/mnt/us/mplayer/control.sh stop
 M P = !/mnt/us/mplayer/control.sh prev
-M N = !/mnt/us/mplayer/control.sh next&lt;/p&gt;
+M N = !/mnt/us/mplayer/control.sh next
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&quot;mytslini&quot;&gt;myts.l.ini&lt;/h1&gt;
-&lt;p&gt;[Actions]
-T A = !/mnt/us/myts/myts.sh kill
-T T = !/mnt/us/myts/myts.sh 1
-T Y = !/mnt/us/myts/myts.sh 2
-T U = !/mnt/us/myts/myts.sh 3&lt;/p&gt;
+&lt;p&gt;myts.l.ini
+    [Actions]
+    T A = !/mnt/us/myts/myts.sh kill
+    T T = !/mnt/us/myts/myts.sh 1
+    T Y = !/mnt/us/myts/myts.sh 2
+    T U = !/mnt/us/myts/myts.sh 3&lt;/p&gt;
 
-&lt;h1 id=&quot;rceini&quot;&gt;rce.ini&lt;/h1&gt;
-&lt;p&gt;[RemoteCommandEntry]&lt;/p&gt;
+&lt;p&gt;rce.ini
+    [RemoteCommandEntry]&lt;/p&gt;
 
-&lt;p&gt;;; comment out AutoEnable and enableRCE definitions below
-;; in order to tully disable the RCE feature&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;;; comment out AutoEnable and enableRCE definitions below
+;; in order to tully disable the RCE feature
 
-&lt;p&gt;AutoEnable = No
+AutoEnable = No
 enableRCE = start RCE
-disableRCE = stop RCE&lt;/p&gt;
+disableRCE = stop RCE
 
-&lt;p&gt;Interface = usb0
+Interface = usb0
 MulticastGroup = 239.1.2.3
-Port = 10000&lt;/p&gt;
+Port = 10000
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&quot;recordini&quot;&gt;record.ini&lt;/h1&gt;
-&lt;p&gt;[Actions]
-A S = !RECDIR=records; [ -d “/mnt/us/$RECDIR” ] || mkdir -p “/mnt/us/$RECDIR”; arecord -qN /mnt/us/$RECDIR/$(date +’%Y-%m-%d_%H-%M-%S’).wav &amp;amp;
-A E = !pkill -f arecord&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Actions]
+A S = !RECDIR=records; [ -d &quot;/mnt/us/$RECDIR&quot; ] || mkdir -p &quot;/mnt/us/$RECDIR&quot;; arecord -qN /mnt/us/$RECDIR/$(date +&#39;%Y-%m-%d_%H-%M-%S&#39;).wav &amp;amp;
+A E = !pkill -f arecord
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&quot;servicecmdsini&quot;&gt;servicecmds.ini&lt;/h1&gt;
-&lt;p&gt;[Actions]
+&lt;pre&gt;&lt;code&gt;[Actions]
 ;; reread hotkey sequence database
-Shift Space = !kill -HUP &lt;code&gt;pidof launchpad&lt;/code&gt; &amp;amp;
+Shift Space = !kill -HUP `pidof launchpad` &amp;amp;
 ;; install custom updates
 Shift I = !/mnt/us/launchpad/customupdate.sh
 ;; Sleep/show screensaver
@@ -174,15 +180,17 @@ Shift S = !powerd_test -p
 ;; restart Amazon Kindle framework
 Shift A = !/etc/init.d/framework restart &amp;amp;
 ;; kick/continue mistakenly stopped Amazon Kindle framework
-Shift C = !kill -CONT &lt;code&gt;pidof cvm&lt;/code&gt; &amp;amp;
+Shift C = !kill -CONT `pidof cvm` &amp;amp;
 ;; Reboot
 Shift R = !shutdown -r now &amp;amp;
 ;; Shutdown
-Shift H = !shutdown -h now &amp;amp;&lt;/p&gt;
+Shift H = !shutdown -h now &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&quot;usbnetini&quot;&gt;usbnet.ini&lt;/h1&gt;
-&lt;p&gt;[Actions]
-Shift N = !/test/bin/usbnetwork&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Actions]
+Shift N = !/test/bin/usbnetwork
+&lt;/code&gt;&lt;/pre&gt;
 </description>
         <pubDate>Fri, 17 Apr 2015 00:00:00 +0800</pubDate>
         <link>https://roaway.github.io/jekyll_blog/kindle/2015/04/17/kindle-3-lauchpad-configuration-files.html</link>

@@ -64,28 +64,30 @@
   <article class="post-content">
     <p>自从有了平板，Chromebook, 我的Kindle 3的使用机会是越来越少了。之前在Kindle 3上捣鼓的一些配置，尤其是一些特别实用的快捷键都忘记了。下面就贴出lauchpad的快捷键配置。</p>
 
-<p>** fbreader.ini
-[Actions]
+<h1 id="fbreaderini">fbreader.ini</h1>
+<pre><code>[Actions]
 ;; run FBReader
 F B = !/mnt/us/FBReader/goqt.sh FBReader &amp;
 ;; run fbKindle
-F R = !/mnt/us/fbKindle/goqt.sh FBReader &amp;</p>
+F R = !/mnt/us/fbKindle/goqt.sh FBReader &amp;
+</code></pre>
 
 <h1 id="kpdfini">kpdf.ini</h1>
-<p>[Actions]
+<pre><code>[Actions]
 # start kindlepdfviewer with filebrowser in /mnt/us/documents
 P D = !/mnt/us/kindlepdfviewer/kpdf.sh /mnt/us/documents
 # start kindlepdfviewer with last document
 P P = !/mnt/us/kindlepdfviewer/kpdf.sh
 # start kindlepdfviewer without framework in /mnt/us/documents
-P K = !/mnt/us/kindlepdfviewer/kpdf.sh –framework_stop /mnt/us/documents
+P K = !/mnt/us/kindlepdfviewer/kpdf.sh --framework_stop /mnt/us/documents
 # start kindlepdfviewer without framework on last read document
-P L = !/mnt/us/kindlepdfviewer/kpdf.sh –framework_stop
+P L = !/mnt/us/kindlepdfviewer/kpdf.sh --framework_stop
 # restart amazon framework - when it got irritated
-P R = !/etc/init.d/framework restart</p>
+P R = !/etc/init.d/framework restart
+</code></pre>
 
 <h1 id="launchpadini">launchpad.ini</h1>
-<p>;;;
+<pre><code>;;;
 ;;; when started, the kindle launchpad just transparently scans keypad and
 ;;; fiveway keystrokes until the user presses and releases the hot sequence
 ;;; Introducer key. Then the launchpad enters the hotkey mode: it captures
@@ -95,9 +97,9 @@ P R = !/etc/init.d/framework restart</p>
 ;;; When the hotkey interval timer triggers or the Trailer key is pressed, the system
 ;;; input capture gets released, and an attempt to execute collected hotkey action
 ;;; is made. Available hotkey actions are controlled by contents of the [Action]
-;;; section below</p>
+;;; section below
 
-<p>; Kindle input key symbolic names are used to specify the hotkey sequence introducer
+; Kindle input key symbolic names are used to specify the hotkey sequence introducer
 ; and trailer keys. See keydefs.ini for details
 [Settings]
 Introducer = Shift
@@ -106,18 +108,18 @@ HotInterval = 700
 ScriptDirectory = ./scripts
 KeyboardInput = /dev/input/event0
 FivewayInput = /dev/input/event1
-InterKeyDelay = 300</p>
+InterKeyDelay = 300
 
-<p>;;; hotkey actions are defined below as <key_sequence> = <action_command>
+;;; hotkey actions are defined below as &lt;key_sequence&gt; = &lt;action_command&gt;
 ;;; one action definition per text line.
 ;;;
-;;; <key_sequence> is a blank separated list of key symbolic names. See keydefs.ini for details.
-;;; <action_command> describes the action to execute on a particular hotkey sequence.
+;;; &lt;key_sequence&gt; is a blank separated list of key symbolic names. See keydefs.ini for details.
+;;; &lt;action_command&gt; describes the action to execute on a particular hotkey sequence.
 ;;; Currently three type of action supported depending on the first character of the
 ;;; command string:
-;;;  '!' -- shell command. The <action_command> string excluding the leading '!' is sent to the
+;;;  '!' -- shell command. The &lt;action_command&gt; string excluding the leading '!' is sent to the
 ;;;         system shell, exactly as it was typed from the console.
-;;;  '@' -- Kindle Framework script. The <action_command> string excluding the leading '@' is interpreted
+;;;  '@' -- Kindle Framework script. The &lt;action_command&gt; string excluding the leading '@' is interpreted
 ;;;         as a name of a special script containing command information obeying format of
 ;;;         the known hotkeys package. The main purpose of these scripts is to simplify
 ;;;         entering special symbols into kindle Framework search box
@@ -131,16 +133,16 @@ InterKeyDelay = 300</p>
 ;;;   Note: to correctly accept  kindle key sequence starting with a special
 ;;;         symbol, the Framework search box should be brought up, if not already.
 ;;;         Press the 'Del' key on Kindle in order to bring the search box up
-;;;</action_command></action_command></action_command></key_sequence></action_command></key_sequence></p>
+;;;
 
-<p>[Actions]
+[Actions]
 ;
 ; hotkey sequence definitions below are provided for reference only.
 ; uncomment corresponding line(s) and restart the Program in order to enable
 ; these definitions
-;</p>
+;
 
-<p>;Dot = @SHIFT-DOT.sh
+;Dot = @SHIFT-DOT.sh
 ;Slash = @SHIFT-SLASH.sh
 ;;0 = @SHIFT-0.sh
 ;;1 = @SHIFT-1.sh
@@ -153,70 +155,74 @@ InterKeyDelay = 300</p>
 ;;8 = @SHIFT-8.sh
 ;;9 = @SHIFT-9.sh
 ;
-;;P = #’)’
-;;O = #’(‘
-;;I = #’*’
-;;U = #’&amp;’
-;;Y = #’^’
-;;T = #’%’
-;;R = #’$’
-;;E = #’#’
-;;W = #’@’
-;;Q = #’!’
-;;Dot = #’,’
-;;Slash = #’?’
+;;P = #')'
+;;O = #'('
+;;I = #'*'
+;;U = #'&amp;'
+;;Y = #'^'
+;;T = #'%'
+;;R = #'$'
+;;E = #'#'
+;;W = #'@'
+;;Q = #'!'
+;;Dot = #','
+;;Slash = #'?'
 ;
-;;D = #’;’ “debugOn”
-;;N = #”`usbNetwork”
-;;X = “just a string”</p>
+;;D = #';' "debugOn"
+;;N = #"`usbNetwork"
+;;X = "just a string"
+</code></pre>
 
 <h1 id="mplayerini">mplayer.ini</h1>
-<p>[Actions]</p>
+<pre><code>[Actions]
 
-<h2 id="launch-the-playlist-see-mplayerplaylist">Launch the playlist, see mplayer/playlist</h2>
-<p>M L = !/mnt/us/mplayer/control.sh playlist</p>
+## Launch the playlist, see mplayer/playlist
+M L = !/mnt/us/mplayer/control.sh playlist
 
-<h2 id="play-everything-in-the-music-directory">Play everything in the music directory</h2>
-<p>M A = !/mnt/us/mplayer/control.sh playall</p>
+## Play everything in the music directory
+M A = !/mnt/us/mplayer/control.sh playall
 
-<h2 id="play-everything-in-the-music-directory-in-random-order-shuffle">Play everything in the music directory, in random order (Shuffle)</h2>
-<p>M R = !/mnt/us/mplayer/control.sh playrand</p>
+## Play everything in the music directory, in random order (Shuffle)
+M R = !/mnt/us/mplayer/control.sh playrand
 
-<p>M Space = !/mnt/us/mplayer/control.sh pause
+M Space = !/mnt/us/mplayer/control.sh pause
 M S = !/mnt/us/mplayer/control.sh stop
 M P = !/mnt/us/mplayer/control.sh prev
-M N = !/mnt/us/mplayer/control.sh next</p>
+M N = !/mnt/us/mplayer/control.sh next
+</code></pre>
 
-<h1 id="mytslini">myts.l.ini</h1>
-<p>[Actions]
-T A = !/mnt/us/myts/myts.sh kill
-T T = !/mnt/us/myts/myts.sh 1
-T Y = !/mnt/us/myts/myts.sh 2
-T U = !/mnt/us/myts/myts.sh 3</p>
+<p>myts.l.ini
+    [Actions]
+    T A = !/mnt/us/myts/myts.sh kill
+    T T = !/mnt/us/myts/myts.sh 1
+    T Y = !/mnt/us/myts/myts.sh 2
+    T U = !/mnt/us/myts/myts.sh 3</p>
 
-<h1 id="rceini">rce.ini</h1>
-<p>[RemoteCommandEntry]</p>
+<p>rce.ini
+    [RemoteCommandEntry]</p>
 
-<p>;; comment out AutoEnable and enableRCE definitions below
-;; in order to tully disable the RCE feature</p>
+<pre><code>;; comment out AutoEnable and enableRCE definitions below
+;; in order to tully disable the RCE feature
 
-<p>AutoEnable = No
+AutoEnable = No
 enableRCE = start RCE
-disableRCE = stop RCE</p>
+disableRCE = stop RCE
 
-<p>Interface = usb0
+Interface = usb0
 MulticastGroup = 239.1.2.3
-Port = 10000</p>
+Port = 10000
+</code></pre>
 
 <h1 id="recordini">record.ini</h1>
-<p>[Actions]
-A S = !RECDIR=records; [ -d “/mnt/us/$RECDIR” ] || mkdir -p “/mnt/us/$RECDIR”; arecord -qN /mnt/us/$RECDIR/$(date +’%Y-%m-%d_%H-%M-%S’).wav &amp;
-A E = !pkill -f arecord</p>
+<pre><code>[Actions]
+A S = !RECDIR=records; [ -d "/mnt/us/$RECDIR" ] || mkdir -p "/mnt/us/$RECDIR"; arecord -qN /mnt/us/$RECDIR/$(date +'%Y-%m-%d_%H-%M-%S').wav &amp;
+A E = !pkill -f arecord
+</code></pre>
 
 <h1 id="servicecmdsini">servicecmds.ini</h1>
-<p>[Actions]
+<pre><code>[Actions]
 ;; reread hotkey sequence database
-Shift Space = !kill -HUP <code>pidof launchpad</code> &amp;
+Shift Space = !kill -HUP `pidof launchpad` &amp;
 ;; install custom updates
 Shift I = !/mnt/us/launchpad/customupdate.sh
 ;; Sleep/show screensaver
@@ -224,15 +230,17 @@ Shift S = !powerd_test -p
 ;; restart Amazon Kindle framework
 Shift A = !/etc/init.d/framework restart &amp;
 ;; kick/continue mistakenly stopped Amazon Kindle framework
-Shift C = !kill -CONT <code>pidof cvm</code> &amp;
+Shift C = !kill -CONT `pidof cvm` &amp;
 ;; Reboot
 Shift R = !shutdown -r now &amp;
 ;; Shutdown
-Shift H = !shutdown -h now &amp;</p>
+Shift H = !shutdown -h now &amp;
+</code></pre>
 
 <h1 id="usbnetini">usbnet.ini</h1>
-<p>[Actions]
-Shift N = !/test/bin/usbnetwork</p>
+<pre><code>[Actions]
+Shift N = !/test/bin/usbnetwork
+</code></pre>
 
     
   </article>
