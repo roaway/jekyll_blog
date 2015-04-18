@@ -4,11 +4,194 @@
     <title>Roaway&#39;s blogs</title>
     <description>我的日志，想写就写，不想写就不写，想写什么就写什么。瞎写，随便写。
 </description>
-    <link>/jekyll_blog/jekyll_blog/</link>
-    <atom:link href="/jekyll_blog/jekyll_blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 06 Mar 2015 14:08:19 +0800</pubDate>
-    <lastBuildDate>Fri, 06 Mar 2015 14:08:19 +0800</lastBuildDate>
+    <link>/jekyll_blog/</link>
+    <atom:link href="/jekyll_blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 18 Apr 2015 14:16:10 +0800</pubDate>
+    <lastBuildDate>Sat, 18 Apr 2015 14:16:10 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Kindle 3 lauchpad 配置文件</title>
+        <description>&lt;p&gt;自从有了平板，Chromebook, 我的Kindle 3的使用机会是越来越少了。之前在Kindle 3上捣鼓的一些配置，尤其是一些特别实用的快捷键都忘记了。下面就贴出lauchpad的快捷键配置。&lt;/p&gt;
+
+&lt;p&gt;** fbreader.ini
+[Actions]
+;; run FBReader
+F B = !/mnt/us/FBReader/goqt.sh FBReader &amp;amp;
+;; run fbKindle
+F R = !/mnt/us/fbKindle/goqt.sh FBReader &amp;amp;&lt;/p&gt;
+
+&lt;h1 id=&quot;kpdfini&quot;&gt;kpdf.ini&lt;/h1&gt;
+&lt;p&gt;[Actions]
+# start kindlepdfviewer with filebrowser in /mnt/us/documents
+P D = !/mnt/us/kindlepdfviewer/kpdf.sh /mnt/us/documents
+# start kindlepdfviewer with last document
+P P = !/mnt/us/kindlepdfviewer/kpdf.sh
+# start kindlepdfviewer without framework in /mnt/us/documents
+P K = !/mnt/us/kindlepdfviewer/kpdf.sh –framework_stop /mnt/us/documents
+# start kindlepdfviewer without framework on last read document
+P L = !/mnt/us/kindlepdfviewer/kpdf.sh –framework_stop
+# restart amazon framework - when it got irritated
+P R = !/etc/init.d/framework restart&lt;/p&gt;
+
+&lt;h1 id=&quot;launchpadini&quot;&gt;launchpad.ini&lt;/h1&gt;
+&lt;p&gt;;;;
+;;; when started, the kindle launchpad just transparently scans keypad and
+;;; fiveway keystrokes until the user presses and releases the hot sequence
+;;; Introducer key. Then the launchpad enters the hotkey mode: it captures
+;;; all system input, engages the interval timer to trigger after specified
+;;; HotInterval milliseconds and starts collecting further keystrokes in an internal
+;;; hotkey sequence buffer.
+;;; When the hotkey interval timer triggers or the Trailer key is pressed, the system
+;;; input capture gets released, and an attempt to execute collected hotkey action
+;;; is made. Available hotkey actions are controlled by contents of the [Action]
+;;; section below&lt;/p&gt;
+
+&lt;p&gt;; Kindle input key symbolic names are used to specify the hotkey sequence introducer
+; and trailer keys. See keydefs.ini for details
+[Settings]
+Introducer = Shift
+Trailer = Enter
+HotInterval = 700
+ScriptDirectory = ./scripts
+KeyboardInput = /dev/input/event0
+FivewayInput = /dev/input/event1
+InterKeyDelay = 300&lt;/p&gt;
+
+&lt;p&gt;;;; hotkey actions are defined below as &lt;key_sequence&gt; = &lt;action_command&gt;
+;;; one action definition per text line.
+;;;
+;;; &lt;key_sequence&gt; is a blank separated list of key symbolic names. See keydefs.ini for details.
+;;; &lt;action_command&gt; describes the action to execute on a particular hotkey sequence.
+;;; Currently three type of action supported depending on the first character of the
+;;; command string:
+;;;  &#39;!&#39; -- shell command. The &lt;action_command&gt; string excluding the leading &#39;!&#39; is sent to the
+;;;         system shell, exactly as it was typed from the console.
+;;;  &#39;@&#39; -- Kindle Framework script. The &lt;action_command&gt; string excluding the leading &#39;@&#39; is interpreted
+;;;         as a name of a special script containing command information obeying format of
+;;;         the known hotkeys package. The main purpose of these scripts is to simplify
+;;;         entering special symbols into kindle Framework search box
+;;;  &#39;#&#39; -- Kindle Framework key sequence. Similar to the above, but doesn&#39;t require
+;;;         external script.
+;;;   all other command strings are interpreted as a sequence of a send_key commands. The contents of these
+;;;   commands gets interpreted and sent as a sequence of simulated keystrokes to the input subsystem.
+;;;   Such commands consist of the space-separated tokens, which can be symbolic key names and/or
+;;;   ascii strings enclosed in quotes (&quot;)
+;;;
+;;;   Note: to correctly accept  kindle key sequence starting with a special
+;;;         symbol, the Framework search box should be brought up, if not already.
+;;;         Press the &#39;Del&#39; key on Kindle in order to bring the search box up
+;;;&lt;/action_command&gt;&lt;/action_command&gt;&lt;/action_command&gt;&lt;/key_sequence&gt;&lt;/action_command&gt;&lt;/key_sequence&gt;&lt;/p&gt;
+
+&lt;p&gt;[Actions]
+;
+; hotkey sequence definitions below are provided for reference only.
+; uncomment corresponding line(s) and restart the Program in order to enable
+; these definitions
+;&lt;/p&gt;
+
+&lt;p&gt;;Dot = @SHIFT-DOT.sh
+;Slash = @SHIFT-SLASH.sh
+;;0 = @SHIFT-0.sh
+;;1 = @SHIFT-1.sh
+;;2 = @SHIFT-2.sh
+;;3 = @SHIFT-3.sh
+;;4 = @SHIFT-4.sh
+;;5 = @SHIFT-5.sh
+;;6 = @SHIFT-6.sh
+;;7 = @SHIFT-7.sh
+;;8 = @SHIFT-8.sh
+;;9 = @SHIFT-9.sh
+;
+;;P = #’)’
+;;O = #’(‘
+;;I = #’*’
+;;U = #’&amp;amp;’
+;;Y = #’^’
+;;T = #’%’
+;;R = #’$’
+;;E = #’#’
+;;W = #’@’
+;;Q = #’!’
+;;Dot = #’,’
+;;Slash = #’?’
+;
+;;D = #’;’ “debugOn”
+;;N = #”`usbNetwork”
+;;X = “just a string”&lt;/p&gt;
+
+&lt;h1 id=&quot;mplayerini&quot;&gt;mplayer.ini&lt;/h1&gt;
+&lt;p&gt;[Actions]&lt;/p&gt;
+
+&lt;h2 id=&quot;launch-the-playlist-see-mplayerplaylist&quot;&gt;Launch the playlist, see mplayer/playlist&lt;/h2&gt;
+&lt;p&gt;M L = !/mnt/us/mplayer/control.sh playlist&lt;/p&gt;
+
+&lt;h2 id=&quot;play-everything-in-the-music-directory&quot;&gt;Play everything in the music directory&lt;/h2&gt;
+&lt;p&gt;M A = !/mnt/us/mplayer/control.sh playall&lt;/p&gt;
+
+&lt;h2 id=&quot;play-everything-in-the-music-directory-in-random-order-shuffle&quot;&gt;Play everything in the music directory, in random order (Shuffle)&lt;/h2&gt;
+&lt;p&gt;M R = !/mnt/us/mplayer/control.sh playrand&lt;/p&gt;
+
+&lt;p&gt;M Space = !/mnt/us/mplayer/control.sh pause
+M S = !/mnt/us/mplayer/control.sh stop
+M P = !/mnt/us/mplayer/control.sh prev
+M N = !/mnt/us/mplayer/control.sh next&lt;/p&gt;
+
+&lt;h1 id=&quot;mytslini&quot;&gt;myts.l.ini&lt;/h1&gt;
+&lt;p&gt;[Actions]
+T A = !/mnt/us/myts/myts.sh kill
+T T = !/mnt/us/myts/myts.sh 1
+T Y = !/mnt/us/myts/myts.sh 2
+T U = !/mnt/us/myts/myts.sh 3&lt;/p&gt;
+
+&lt;h1 id=&quot;rceini&quot;&gt;rce.ini&lt;/h1&gt;
+&lt;p&gt;[RemoteCommandEntry]&lt;/p&gt;
+
+&lt;p&gt;;; comment out AutoEnable and enableRCE definitions below
+;; in order to tully disable the RCE feature&lt;/p&gt;
+
+&lt;p&gt;AutoEnable = No
+enableRCE = start RCE
+disableRCE = stop RCE&lt;/p&gt;
+
+&lt;p&gt;Interface = usb0
+MulticastGroup = 239.1.2.3
+Port = 10000&lt;/p&gt;
+
+&lt;h1 id=&quot;recordini&quot;&gt;record.ini&lt;/h1&gt;
+&lt;p&gt;[Actions]
+A S = !RECDIR=records; [ -d “/mnt/us/$RECDIR” ] || mkdir -p “/mnt/us/$RECDIR”; arecord -qN /mnt/us/$RECDIR/$(date +’%Y-%m-%d_%H-%M-%S’).wav &amp;amp;
+A E = !pkill -f arecord&lt;/p&gt;
+
+&lt;h1 id=&quot;servicecmdsini&quot;&gt;servicecmds.ini&lt;/h1&gt;
+&lt;p&gt;[Actions]
+;; reread hotkey sequence database
+Shift Space = !kill -HUP &lt;code&gt;pidof launchpad&lt;/code&gt; &amp;amp;
+;; install custom updates
+Shift I = !/mnt/us/launchpad/customupdate.sh
+;; Sleep/show screensaver
+Shift S = !powerd_test -p
+;; restart Amazon Kindle framework
+Shift A = !/etc/init.d/framework restart &amp;amp;
+;; kick/continue mistakenly stopped Amazon Kindle framework
+Shift C = !kill -CONT &lt;code&gt;pidof cvm&lt;/code&gt; &amp;amp;
+;; Reboot
+Shift R = !shutdown -r now &amp;amp;
+;; Shutdown
+Shift H = !shutdown -h now &amp;amp;&lt;/p&gt;
+
+&lt;h1 id=&quot;usbnetini&quot;&gt;usbnet.ini&lt;/h1&gt;
+&lt;p&gt;[Actions]
+Shift N = !/test/bin/usbnetwork&lt;/p&gt;
+</description>
+        <pubDate>Fri, 17 Apr 2015 00:00:00 +0800</pubDate>
+        <link>/jekyll_blog/kindle/2015/04/17/kindle-3-lauchpad-configuration-files.html</link>
+        <guid isPermaLink="true">/jekyll_blog/kindle/2015/04/17/kindle-3-lauchpad-configuration-files.html</guid>
+        
+        
+        <category>kindle</category>
+        
+      </item>
     
       <item>
         <title>将jekyll生成的网站部署到github pages上</title>
@@ -66,8 +249,8 @@ git push -u origin gh-pages
 &lt;p&gt;这样就可以在本地管理日志，然后执行make，同步到网站上。&lt;/p&gt;
 </description>
         <pubDate>Thu, 05 Mar 2015 00:00:00 +0800</pubDate>
-        <link>/jekyll_blog/jekyll_blog/markdown/2015/03/05/deploy-jekyll-site-on-github-pages.html</link>
-        <guid isPermaLink="true">/jekyll_blog/jekyll_blog/markdown/2015/03/05/deploy-jekyll-site-on-github-pages.html</guid>
+        <link>/jekyll_blog/markdown/2015/03/05/deploy-jekyll-site-on-github-pages.html</link>
+        <guid isPermaLink="true">/jekyll_blog/markdown/2015/03/05/deploy-jekyll-site-on-github-pages.html</guid>
         
         <category>jekyll</category>
         
@@ -83,30 +266,31 @@ git push -u origin gh-pages
       </item>
     
       <item>
-        <title>jekyll添加第三方评论系统</title>
+        <title>jekyll添加第三方评论系统Disqus</title>
         <description>&lt;ol&gt;
-  &lt;li&gt;Add a variable called comments to the YAML Front Matter and set its value to true. A sample front matter might look like:&lt;/li&gt;
-&lt;/ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add a variable called comments to the YAML Front Matter and set its value to true. A sample front matter might look like:&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;…
-layout: default
-comments: true
-# other options
-…&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;In between a % if page.comments % and a % endif % tag, add the Universal Embed Code in the appropriate template where you’d like Disqus to load.&lt;/li&gt;
+    &lt;pre&gt;&lt;code&gt; layout: default
+ comments: true
+ # other options
+ ...
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In between a % if page.comments % and a % endif % tag, add the Universal Embed Code in the appropriate template where you’d like Disqus to load.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Thu, 05 Mar 2015 00:00:00 +0800</pubDate>
-        <link>/jekyll_blog/jekyll_blog/jekyll/2015/03/05/add-disqus-to-jekyll.html</link>
-        <guid isPermaLink="true">/jekyll_blog/jekyll_blog/jekyll/2015/03/05/add-disqus-to-jekyll.html</guid>
+        <link>/jekyll_blog/jekyll/2015/03/05/add-disqus-to-jekyll.html</link>
+        <guid isPermaLink="true">/jekyll_blog/jekyll/2015/03/05/add-disqus-to-jekyll.html</guid>
         
         <category>jekyll</category>
+        
+        <category>Disqus</category>
+        
+        <category>comment</category>
         
         
         <category>jekyll</category>
@@ -251,8 +435,8 @@ set -g set-titles-string &quot;#T&quot;
 &lt;/ol&gt;
 </description>
         <pubDate>Tue, 03 Mar 2015 00:00:00 +0800</pubDate>
-        <link>/jekyll_blog/jekyll_blog/gnu/linux/2015/03/03/tmux-configure.html</link>
-        <guid isPermaLink="true">/jekyll_blog/jekyll_blog/gnu/linux/2015/03/03/tmux-configure.html</guid>
+        <link>/jekyll_blog/gnu/linux/2015/03/03/tmux-configure.html</link>
+        <guid isPermaLink="true">/jekyll_blog/gnu/linux/2015/03/03/tmux-configure.html</guid>
         
         <category>linux</category>
         
@@ -283,8 +467,8 @@ set -g set-titles-string &quot;#T&quot;
 
 </description>
         <pubDate>Sun, 15 Feb 2015 01:17:02 +0800</pubDate>
-        <link>/jekyll_blog/jekyll_blog/jekyll/update/2015/02/15/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">/jekyll_blog/jekyll_blog/jekyll/update/2015/02/15/welcome-to-jekyll.html</guid>
+        <link>/jekyll_blog/jekyll/update/2015/02/15/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">/jekyll_blog/jekyll/update/2015/02/15/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
@@ -311,8 +495,8 @@ set -g set-titles-string &quot;#T&quot;
 &lt;p&gt;通过比较，我想先选择jekyll试试。写好日志，保存，运行服务，打开网站，新的一篇日志上线了。简单方便，不错！&lt;/p&gt;
 </description>
         <pubDate>Sat, 14 Feb 2015 00:00:00 +0800</pubDate>
-        <link>/jekyll_blog/jekyll_blog/jekyll/2015/02/14/my-first-jekyll-blog.html</link>
-        <guid isPermaLink="true">/jekyll_blog/jekyll_blog/jekyll/2015/02/14/my-first-jekyll-blog.html</guid>
+        <link>/jekyll_blog/jekyll/2015/02/14/my-first-jekyll-blog.html</link>
+        <guid isPermaLink="true">/jekyll_blog/jekyll/2015/02/14/my-first-jekyll-blog.html</guid>
         
         <category>Jekyll</category>
         
@@ -382,8 +566,8 @@ use &lt;code&gt;int a, b;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Contact me: &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#114;&amp;#111;&amp;#097;&amp;#119;&amp;#097;&amp;#121;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;&amp;#114;&amp;#111;&amp;#097;&amp;#119;&amp;#097;&amp;#121;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 14 Feb 2015 00:00:00 +0800</pubDate>
-        <link>/jekyll_blog/jekyll_blog/markdown/2015/02/14/markdown.html</link>
-        <guid isPermaLink="true">/jekyll_blog/jekyll_blog/markdown/2015/02/14/markdown.html</guid>
+        <link>/jekyll_blog/markdown/2015/02/14/markdown.html</link>
+        <guid isPermaLink="true">/jekyll_blog/markdown/2015/02/14/markdown.html</guid>
         
         <category>markdown</category>
         
@@ -397,8 +581,8 @@ use &lt;code&gt;int a, b;&lt;/code&gt;&lt;/p&gt;
         <description>
 </description>
         <pubDate>Sat, 14 Feb 2015 00:00:00 +0800</pubDate>
-        <link>/jekyll_blog/jekyll_blog/jekyll/2015/02/14/Acer-C720-Chromebook-.html</link>
-        <guid isPermaLink="true">/jekyll_blog/jekyll_blog/jekyll/2015/02/14/Acer-C720-Chromebook-.html</guid>
+        <link>/jekyll_blog/jekyll/2015/02/14/Acer-C720-Chromebook-.html</link>
+        <guid isPermaLink="true">/jekyll_blog/jekyll/2015/02/14/Acer-C720-Chromebook-.html</guid>
         
         <category>Jekyll</category>
         

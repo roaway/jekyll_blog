@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>jekyll添加第三方评论系统</title>
+  <title>jekyll添加第三方评论系统Disqus</title>
   <meta name="description" content="  Add a variable called comments to the YAML Front Matter and set its value to true. A sample front matter might look like:">
 
-  <link rel="stylesheet" href="/jekyll_blog/css/main.css">
-  <link rel="canonical" href="/jekyll_blog/jekyll_blog/jekyll/2015/03/05/add-disqus-to-jekyll.html">
-  <link rel="alternate" type="application/rss+xml" title="Roaway's blogs" href="/jekyll_blog/jekyll_blog/feed.xml" />
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="/jekyll_blog/jekyll/2015/03/05/add-disqus-to-jekyll.html">
+  <link rel="alternate" type="application/rss+xml" title="Roaway's blogs" href="/jekyll_blog/feed.xml" />
 </head>
 
 
@@ -21,7 +21,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/jekyll_blog/">Roaway's blogs</a>
+    <a class="site-title" href="/">Roaway's blogs</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -35,7 +35,7 @@
       <div class="trigger">
         
           
-          <a class="page-link" href="/jekyll_blog/about/">About</a>
+          <a class="page-link" href="/about/">About</a>
           
         
           
@@ -57,27 +57,24 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">jekyll添加第三方评论系统</h1>
+    <h1 class="post-title">jekyll添加第三方评论系统Disqus</h1>
     <p class="post-meta">Mar 5, 2015</p>
   </header>
 
   <article class="post-content">
     <ol>
-  <li>Add a variable called comments to the YAML Front Matter and set its value to true. A sample front matter might look like:</li>
-</ol>
+  <li>
+    <p>Add a variable called comments to the YAML Front Matter and set its value to true. A sample front matter might look like:</p>
 
-<blockquote>
-  <p>…
-layout: default
-comments: true
-# other options
-…</p>
-</blockquote>
-
-<hr />
-
-<ol>
-  <li>In between a % if page.comments % and a % endif % tag, add the Universal Embed Code in the appropriate template where you’d like Disqus to load.</li>
+    <pre><code> layout: default
+ comments: true
+ # other options
+ ...
+</code></pre>
+  </li>
+  <li>
+    <p>In between a % if page.comments % and a % endif % tag, add the Universal Embed Code in the appropriate template where you’d like Disqus to load.</p>
+  </li>
 </ol>
 
     
