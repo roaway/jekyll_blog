@@ -6,8 +6,8 @@
 </description>
     <link>https://roaway.github.io/jekyll_blog/</link>
     <atom:link href="https://roaway.github.io/jekyll_blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 18 Apr 2015 16:30:06 +0800</pubDate>
-    <lastBuildDate>Sat, 18 Apr 2015 16:30:06 +0800</lastBuildDate>
+    <pubDate>Sat, 18 Apr 2015 16:34:59 +0800</pubDate>
+    <lastBuildDate>Sat, 18 Apr 2015 16:34:59 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -141,17 +141,18 @@ M P = !/mnt/us/mplayer/control.sh prev
 M N = !/mnt/us/mplayer/control.sh next
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;myts.l.ini
-    [Actions]
-    T A = !/mnt/us/myts/myts.sh kill
-    T T = !/mnt/us/myts/myts.sh 1
-    T Y = !/mnt/us/myts/myts.sh 2
-    T U = !/mnt/us/myts/myts.sh 3&lt;/p&gt;
+&lt;h1 id=&quot;mytslini&quot;&gt;myts.l.ini&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;[Actions]
+T A = !/mnt/us/myts/myts.sh kill
+T T = !/mnt/us/myts/myts.sh 1
+T Y = !/mnt/us/myts/myts.sh 2
+T U = !/mnt/us/myts/myts.sh 3
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;rce.ini
-    [RemoteCommandEntry]&lt;/p&gt;
+&lt;h1 id=&quot;rceini&quot;&gt;rce.ini&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;[RemoteCommandEntry]
 
-&lt;pre&gt;&lt;code&gt;;; comment out AutoEnable and enableRCE definitions below
+;; comment out AutoEnable and enableRCE definitions below
 ;; in order to tully disable the RCE feature
 
 AutoEnable = No
