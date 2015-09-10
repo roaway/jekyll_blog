@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Secure SSH 删除knows_hosts</title>
-  <meta name="description" content="SSH HOST换了IP地址，Secure SSH就上不去了。解决方法：">
+  <meta name="description" content="SSH Host换了IP地址，Secure SSH就上不去了。解决方法：">
 
   <link rel="stylesheet" href="/jekyll_blog/css/main.css">
   <link rel="canonical" href="https://roaway.github.io/jekyll_blog/markdown/2015/09/10/Secure-SSH-Known_hosts.html">
@@ -62,15 +62,16 @@
   </header>
 
   <article class="post-content">
-    <p>SSH HOST换了IP地址，Secure SSH就上不去了。解决方法：</p>
+    <p>SSH Host换了IP地址，Secure SSH就上不去了。解决方法：</p>
 
-<pre><code>1. 启动 Secure Shell 扩展
-2. 在 Secure Shell 扩展的 Tab 界面下，按下 “Ctrl+Shift+J” 打开 “Javascript 控制台” 工具
-3. 输入如下命令：
-     - term_.command.removeAllKnownHosts()
-     - code true
-4. OK！known_hosts 记录清除完毕！
-</code></pre>
+<ol>
+  <li>启动 Secure Shell 扩展</li>
+  <li>在 Secure Shell 扩展的 Tab 界面下，按下 “Ctrl+Shift+J” 打开 “Javascript 控制台” 工具</li>
+  <li>输入如下命令：
+     term_.command.removeAllKnownHosts()
+     true</li>
+  <li>OK！known_hosts 记录清除完毕！</li>
+</ol>
 
 <p>摘自<a href="http://www.tuicool.com/articles/EfqURv">http://www.tuicool.com/articles/EfqURv</a></p>
 
