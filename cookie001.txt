@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Date: Sat, 18 Apr 2015 08:54:32 GMT
+Server: Apache/2.2.22 (Debian)
+X-Powered-By: PHP/5.4.39-0+deb7u1
+Set-Cookie: moyu_username=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; secure
+Set-Cookie: moyu_password=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; secure
+Set-Cookie: moyu_username=roaway; path=/; secure
+Set-Cookie: moyu_password=moyuyshwyy; path=/; secure
+Vary: Accept-Encoding
+Content-Length: 91
+Content-Type: text/html
+

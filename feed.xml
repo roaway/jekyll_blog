@@ -6,9 +6,47 @@
 </description>
     <link>https://roaway.github.io/jekyll_blog/</link>
     <atom:link href="https://roaway.github.io/jekyll_blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 18 Apr 2015 16:34:59 +0800</pubDate>
-    <lastBuildDate>Sat, 18 Apr 2015 16:34:59 +0800</lastBuildDate>
+    <pubDate>Thu, 10 Sep 2015 22:02:26 +0800</pubDate>
+    <lastBuildDate>Thu, 10 Sep 2015 22:02:26 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Secure SSH 删除knows_hosts</title>
+        <description>&lt;p&gt;SSH HOST换了IP地址，Secure SSH就上不去了。解决方法：
+1. 启动 Secure Shell 扩展
+2. 在 Secure Shell 扩展的 Tab 界面下，按下 “Ctrl+Shift+J” 打开 “Javascript 控制台” 工具
+3. 输入如下命令：
+&amp;gt; term_.command.removeAllKnownHosts()
+true
+4. OK！known_hosts 记录清除完毕！&lt;/p&gt;
+
+&lt;p&gt;摘自&lt;a href=&quot;http://www.tuicool.com/articles/EfqURv&quot;&gt;http://www.tuicool.com/articles/EfqURv&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 Sep 2015 00:00:00 +0800</pubDate>
+        <link>https://roaway.github.io/jekyll_blog/markdown/2015/09/10/Secure-SSH-Known_hosts.html</link>
+        <guid isPermaLink="true">https://roaway.github.io/jekyll_blog/markdown/2015/09/10/Secure-SSH-Known_hosts.html</guid>
+        
+        <category>chromebook ssh</category>
+        
+        
+        <category>markdown</category>
+        
+      </item>
+    
+      <item>
+        <title></title>
+        <description>
+</description>
+        <pubDate>Sat, 25 Apr 2015 00:00:00 +0800</pubDate>
+        <link>https://roaway.github.io/jekyll_blog/linux/2015/04/25/unzip.html</link>
+        <guid isPermaLink="true">https://roaway.github.io/jekyll_blog/linux/2015/04/25/unzip.html</guid>
+        
+        <category>linux zip unzip</category>
+        
+        
+        <category>linux</category>
+        
+      </item>
     
       <item>
         <title>Kindle 3 lauchpad 配置文件</title>
@@ -488,9 +526,7 @@ set -g set-titles-string &quot;#T&quot;
     
       <item>
         <title>我的第一篇Jekyll日志</title>
-        <description>&lt;p&gt;今天是情人节哦。老婆不在家，我一个人在家躺在床上玩我的Acer C720 Chromebook，自从有了Chromebook，除了上班时间，几乎机不离手，可以说Chromebook就是我的老婆。但是玩多了也会腻味，无聊，总得干些事吧，日程、GTD、日志这些东西正是我这些天来比较感兴趣的东西，前几样的东西我已经玩过了，&lt;/p&gt;
-
-&lt;p&gt;日程，我用sunrise calendar. 这是chrome上的日程管理程序，其强大之处是同时支持google calendar和icloud calendar，我原来使用的是google calendar, 但是随着Google在中国的全面被封，加上我换了台iPhone手机，所以也只好转向Apple的日程管理服务了。话说回来，Google calendar提供的手机短信提醒服务真是好用，让人怀念。如果Apple也能提供类似的服务就太好了。&lt;/p&gt;
+        <description>&lt;p&gt;日程，我用sunrise calendar. 这是chrome上的日程管理程序，其强大之处是同时支持google calendar和icloud calendar，我原来使用的是google calendar, 但是随着Google在中国的全面被封，加上我换了台iPhone手机，所以也只好转向Apple的日程管理服务了。话说回来，Google calendar提供的手机短信提醒服务真是好用，让人怀念。如果Apple也能提供类似的服务就太好了。&lt;/p&gt;
 
 &lt;p&gt;还有GTD， 也就是所谓的Get things done，试了很多chrome app， 最得我心的是 workflowy. 这个APP简直就是ORG-MODE的翻版，应用流畅，简单直观，可惜之处是使用它的全套功能和服务的话要收费，而且好像价格不菲，免费使用的话有一定的功能限制。一看到要收费，心情就不爽，ORG-MODE功能比它强大多了，而且还是开源的，我为什么不用它呢，于时就在Crouton 的CLI Emacs org-mode建立了自已的GTD系统。&lt;/p&gt;
 
