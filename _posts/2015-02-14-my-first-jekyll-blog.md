@@ -6,7 +6,6 @@ category: "Jekyll"
 tags: [Jekyll]
 ---
 
-今天是情人节哦。老婆不在家，我一个人在家躺在床上玩我的Acer C720 Chromebook，自从有了Chromebook，除了上班时间，几乎机不离手，可以说Chromebook就是我的老婆。但是玩多了也会腻味，无聊，总得干些事吧，日程、GTD、日志这些东西正是我这些天来比较感兴趣的东西，前几样的东西我已经玩过了，
 
 日程，我用sunrise calendar. 这是chrome上的日程管理程序，其强大之处是同时支持google calendar和icloud calendar，我原来使用的是google calendar, 但是随着Google在中国的全面被封，加上我换了台iPhone手机，所以也只好转向Apple的日程管理服务了。话说回来，Google calendar提供的手机短信提醒服务真是好用，让人怀念。如果Apple也能提供类似的服务就太好了。
 
