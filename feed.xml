@@ -6,8 +6,8 @@
 </description>
     <link>https://roaway.github.io/jekyll_blog/</link>
     <atom:link href="https://roaway.github.io/jekyll_blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 10 Sep 2015 22:14:32 +0800</pubDate>
-    <lastBuildDate>Thu, 10 Sep 2015 22:14:32 +0800</lastBuildDate>
+    <pubDate>Thu, 10 Sep 2015 22:18:25 +0800</pubDate>
+    <lastBuildDate>Thu, 10 Sep 2015 22:18:25 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -17,8 +17,8 @@
 &lt;pre&gt;&lt;code&gt;1. 启动 Secure Shell 扩展
 2. 在 Secure Shell 扩展的 Tab 界面下，按下 “Ctrl+Shift+J” 打开 “Javascript 控制台” 工具
 3. 输入如下命令：
-    &amp;gt; term_.command.removeAllKnownHosts()
-    true
+     - term_.command.removeAllKnownHosts()
+     - code true
 4. OK！known_hosts 记录清除完毕！
 &lt;/code&gt;&lt;/pre&gt;
 
